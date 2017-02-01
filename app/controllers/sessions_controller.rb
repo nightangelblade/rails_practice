@@ -4,15 +4,13 @@ class SessionsController < ApplicationController
   end
 
   def create
-    p "*" * 25
-    p login_params
-    @user = User.find_by(login_params)
-
-    if @user
+    @user = User.find_by(username: params[:username])
+    # p@user.authenticate(params[:password])
+    if @user && @user.authenticate(params[:password])
       login(@user)
       redirect_to root_path
     else
-      render 'new'
+      render new_session_path
     end
   end
 
@@ -20,11 +18,6 @@ class SessionsController < ApplicationController
   def destroy
     session.clear
     redirect_to root_path
-  end
-
-  private
-  def login_params
-    params.require(:user).permit(:username, :password)
   end
 
 
