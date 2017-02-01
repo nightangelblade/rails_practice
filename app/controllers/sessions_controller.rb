@@ -4,6 +4,8 @@ class SessionsController < ApplicationController
   end
 
   def create
+    p "*" * 25
+    p login_params
     @user = User.find_by(login_params)
 
     if @user
