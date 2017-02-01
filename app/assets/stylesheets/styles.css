@@ -1,0 +1,23 @@
+.nav-links{
+	margin-left: 1em;
+	padding-top: 1em;
+}
+
+.content-container{
+	margin-left: 2em;
+}
+
+.index-list {
+	list-style: none;
+	padding-left: 1em;
+}
+
+.category, .article {
+	text-decoration: none;
+}
+
+.article-new{
+	text-decoration: none;
+	padding: 1em;
+	border: solid 1px;
+}

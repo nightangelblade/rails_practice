@@ -1,6 +1,6 @@
 <h2>All Categories</h2>
-<ul>
+<ul class="index-list">
 <% @categories.each do |category| %>
-  <li><%= link_to category.title, category_path(category) %></li>
+  <li><%= link_to category.title, category_path(category), :class => "category" %></li>
 <% end %>
 </ul>
